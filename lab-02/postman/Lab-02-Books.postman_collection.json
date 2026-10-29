@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "Lab 02 - SQLite Books CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET all books",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/"
+      }
+    },
+    {
+      "name": "GET one book",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/books/1/"
+      }
+    },
+    {
+      "name": "POST a book",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Clean Code\",\n  \"author\": \"Robert C. Martin\",\n  \"price\": 599,\n  \"pages\": 464\n}"
+        },
+        "url": "{{baseUrl}}/books/"
+      }
+    },
+    {
+      "name": "PUT a book",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Clean Code (Updated)\",\n  \"author\": \"Robert C. Martin\",\n  \"price\": 649,\n  \"pages\": 464\n}"
+        },
+        "url": "{{baseUrl}}/books/11/"
+      }
+    },
+    {
+      "name": "DELETE a book",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/books/11/"
+      }
+    }
+  ]
+}
